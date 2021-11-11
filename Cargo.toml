@@ -1,0 +1,36 @@
+[profile.release]
+panic = 'unwind'
+
+[workspace]
+default-members = [
+    "node",
+    "pallets/*",
+    "primitives",
+    "runtime/*",
+    "support",
+]
+
+members = [
+    "node",
+    "node/cli",
+    "node/rpc",
+    "node/service",
+    "pallets/assets",
+    "pallets/auction",
+    "pallets/blindbox",
+    "pallets/bridge",
+    "pallets/common",
+    "pallets/deac",
+    "pallets/multi",
+    "pallets/names",
+    "pallets/rewards",
+    "pallets/staking",
+    "pallets/staking/rpc",
+    "pallets/staking/rpc/runtime-api",
+    "pallets/trade",
+    "pallets/validator-set",
+    "primitives",
+    "runtime/quark",
+    "runtime/hadron",
+    "support",
+]

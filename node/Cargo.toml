@@ -1,0 +1,31 @@
+[package]
+name = "aci-chain"
+authors = ["hercules-network"]
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[[bin]]
+name = "aci-chain"
+path = "src/main.rs"
+
+[dependencies]
+futures         = { version = "0.3.13" }
+parity-util-mem = { version = "0.9.0", default-features = false, features = ["jemalloc-global"] }
+
+aci-cli = { path = "cli" }
+aci-service = { path = "service" }
+aci-rpc = { path = "rpc" }
+aci-quark-runtime = { path = "../runtime/quark", optional = true }
+aci-hadron-runtime = { path = "../runtime/hadron", optional = true }
+
+[profile.release]
+# runtime requires unwinding.
+panic = "unwind"
+
+[features]
+default = [ ]

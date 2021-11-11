@@ -1,0 +1,32 @@
+[package]
+name = "aci-common"
+authors = ["hercules-network"]
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false, features = ["derive"] }
+frame-support = { version = "3.0.0", default-features = false }
+frame-system = { version = "3.0.0", default-features = false }
+sp-std = { version = "3.0.0", default-features = false }
+sp-runtime = { version = "3.0.0", default-features = false }
+pallet-balances = { version = "3.0.0", default-features = false }
+pallet-authorship = { version = "3.0.0", default-features = false }
+pallet-transaction-payment = { version = "3.0.0", default-features = false }
+
+aci-primitives = { path = "../../primitives", default-features = false }
+
+[features]
+default = ['std']
+std = [
+    'codec/std',
+    'sp-runtime/std',
+    'frame-support/std',
+    'frame-system/std',
+    'pallet-authorship/std',
+    "pallet-balances/std",
+    'pallet-transaction-payment/std',
+    'aci-primitives/std',
+]

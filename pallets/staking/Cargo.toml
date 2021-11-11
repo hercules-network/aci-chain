@@ -1,0 +1,29 @@
+[package]
+name = "pallet-staking"
+authors = ["hercules-network"]
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false, features = ["derive"] }
+frame-support = { version = "3.0.0", default-features = false }
+frame-system = { version = "3.0.0", default-features = false }
+sp-std = { version = "3.0.0", default-features = false }
+sp-core = { version = "3.0.0", default-features = false }
+sp-runtime = { version = "3.0.0", default-features = false }
+sp-api = { version = "3.0.0", default-features = false }
+
+serde = { version = "1.0.102", optional = true, features = ["derive"] }
+
+[features]
+default = ['std']
+std = [
+    'serde',
+    'codec/std',
+    'frame-support/std',
+    'frame-system/std',
+    'sp-std/std',
+    'sp-core/std',
+    'sp-runtime/std',
+    'sp-api/std',
+]
